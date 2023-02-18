@@ -1,0 +1,54 @@
+# this is a madlib example, like in language exercises
+
+introduction = "Excercise: fill in the gaps with correct prepositions.\nRead the sentences carefully and \
+fill the blanks with the correct word by writing it next to the coresponding point."
+
+text_blanks ="\n1. When I was younger, I was always so afraid _ going to the dentist's.\
+\n2. Your mother is looking forward _  going on that trip to Australia, isn't she?\
+\n3. The police were not convinced _ the man's honesty and charged him.\
+\n4. I would rather go to the disco _  stay here at home.\
+\n5. I'm not surprised he took that job. He has always been so keen _ computers.\
+\n6. But I am surprised _  how much money they want to pay him!\
+\n7. Mary isn't quite ready yet. She is in the kitchen looking _ her car keys.\
+\n8. Instead _ sitting here complaining about having nothing to do, go and do something constructive!\
+\n9. I don't have as much confidence in myself _ you seem to.\
+\n10. Are you really happy _ the life you have here in San Francisco, Jane?\
+\n11. In some Mediterranean cultures, respect _ your elders is the most important part of family life.\
+\n12. Tell me _ the new job you started today.\
+\n13. I'm very interested _ wildlife documentaries on TV.\
+\n14. Do you always travel about the town _ car?"
+
+print(introduction)
+print(text_blanks)
+
+p1 = input("1: ")
+p2 = input("2: ")
+p3 = input("3: ")
+p4 = input("4: ")
+p5 = input("5: ")
+p6 = input("6: ")
+p7 = input("7: ")
+p8 = input("8: ")
+p9 = input("9: ")
+p10 = input("10: ")
+p11 = input("11: ")
+p12 = input("12: ")
+p13 = input("13: ")
+p14 = input("14: ")
+
+text_filled = f"\n1. When I was younger, I was always so afraid {p1} going to the dentist's.\
+\n2. Your mother is looking forward {p2} going on that trip to Australia, isn't she?\
+\n3. The police were not convinced {p3} the man's honesty and charged him.\
+\n4. I would rather go to the disco {p4} stay here at home.\
+\n5. I'm not surprised he took that job. He has always been so keen {p5} computers.\
+\n6. But I am surprised {p6} how much money they want to pay him!\
+\n7. Mary isn't quite ready yet. She is in the kitchen looking {p7} her car keys.\
+\n8. Instead {p8} sitting here complaining about having nothing to do, go and do something constructive!\
+\n9. I don't have as much confidence in myself {p9} you seem to.\
+\n10. Are you really happy {p10} the life you have here in San Francisco, Jane?\
+\n11. In some Mediterranean cultures, respect {p11} your elders is the most important part of family life.\
+\n12. Tell me {p12} the new job you started today.\
+\n13. I'm very interested {p13} wildlife documentaries on TV.\
+\n14. Do you always travel about the town {p14} car?"
+
+
