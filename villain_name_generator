@@ -1,0 +1,6 @@
+print("This is a villain name generator.")
+name = input("What is your name? ")
+pet = input("What is your favourite pet? ")
+city = input("Where were you born?")
+
+print("Making absolutely no sense, your villain name is " + name + " the " + pet + " from " + city)
