@@ -1,0 +1,5 @@
+total = input("What's the total bill?")
+num_ppl = input("How many people should you split it between?")
+percentage = input("How high should the bill be? [%]")
+
+print(f"You should pay " + str(float(float(total)/float(num_ppl)*1+float(percentage)/100)) + " per person")
