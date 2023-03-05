@@ -1,0 +1,81 @@
+print("You go through some turns, which only have one way. You finally come to a crossroad")
+
+choice1 =str(input("The first crossroad. Left or right? l or r"))
+
+if choice1 == "r":
+    print("You ran into a wall. Sorry, try again")
+if choice1 == "l":
+    print("You went the correct way. Lets go further")
+    choice2 = str(input("The second crossroad. l or r"))
+    if choice2 == "r":
+        print("You hit a wall. Sorry, try again")
+    if choice2 == "l":
+        print("You went the correct way. Let's go further")
+        choice3 = str(input("The third crossroad. l or r"))
+        if choice3 == "l":
+            print("You hit a wall. Sorry, try again")
+        if choice3 == "r":
+            print("You went the correct way. Let's go further")
+            choice4 = str(input("The fourth crossroad. l or r"))
+            if choice4 == "r":
+                print("You hit a wall. Sorry, try again")
+            if choice4 == "l":
+                print("You went the correct way. Let's go further")
+                print("You walk a long time, seeing short dead ends and making you way through the correct path")
+                print("Your legs are getting tired")
+                choice5 =  str(input("The fifth crossroad. l or r"))
+                if choice5 == "r":
+                    print("You hit a wall. Sorry, try again")
+                if choice5 == "l":
+                    print("You went the correct way. Let's go further")
+                    choice6 = str(input("The sixth crossroad. l or r"))
+                    if choice6 == "l":
+                        print("You hit a wall. Sorry, try again")
+                    if choice6 == "r":
+                        print("You went the correct way. Let's go further")
+                        choice7 = str(input("The seventh crossroad. l or r"))
+                        if choice7 == "r":
+                            print("You hit a wall. Sorry, try again")
+                        if choice7 == "l":
+                            print("You went the correct way. Let's go further")
+                            print("Aren't you getting tired?")
+                            choice8 =  str(input("The eigth crossroad. l or r"))
+                            if choice8 == "l":
+                                print("You hit a wall. Sorry, try again")
+                            if choice8 == "r":
+                                print("You went the correct way. Let's go further")
+                                print("I'm sure there's just a bit more....")
+                                choice9 = str(input("The ninth crossroad. l or r"))
+                                if choice9 == "l":
+                                    print("You hit a wall. Sorry, try again")
+                                if choice9 == "r":
+                                    print("You went the correct way. Let's go further")
+                                    print("Oh look!! There's the exit!")
+                                    print("Huh, looks like you had a map on you all along... too bad!")
+                                    print('''
+                                
+                                    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa   a
+                                    8   8               8               8           8                   8   8
+                                    8   8   aaaaaaaaa   8   aaaaa   aaaa8aaaa   aaaa8   aaaaa   aaaaa   8   8
+                                    8               8       8   8           8           8   8   8       8   8
+                                    8aaaaaaaa   a   8aaaaaaa8   8aaaaaaaa   8aaaa   a   8   8   8aaaaaaa8   8
+                                    8       8   8               8           8   8   8   8   8           8   8
+                                    8   a   8aaa8aaaaaaaa   a   8   aaaaaaaa8   8aaa8   8   8aaaaaaaa   8   8
+                                    8   8               8   8   8       8           8           8       8   8
+                                    8   8aaaaaaaaaaaa   8aaa8   8aaaa   8   aaaaa   8aaaaaaaa   8   aaaa8   8
+                                    8           8       8   8       8   8       8           8   8           8
+                                    8   aaaaa   8aaaa   8   8aaaa   8   8aaaaaaa8   a   a   8   8aaaaaaaaaaa8
+                                    8       8       8   8   8       8       8       8   8   8       8       8
+                                    8aaaaaaa8aaaa   8   8   8   aaaa8aaaa   8   aaaa8   8   8aaaa   8aaaa   8
+                                    8           8   8           8       8   8       8   8       8           8
+                                    8   aaaaa   8   8aaaaaaaa   8aaaa   8   8aaaa   8aaa8   aaaa8aaaaaaaa   8
+                                    8   8       8           8           8       8   8   8               8   8
+                                    8   8   aaaa8aaaa   a   8aaaa   aaaa8aaaa   8   8   8aaaaaaaaaaaa   8   8
+                                    8   8           8   8   8   8   8           8               8   8       8
+                                    8   8aaaaaaaa   8   8   8   8aaa8   8aaaaaaa8   aaaaaaaaa   8   8aaaaaaa8
+                                    8   8       8   8   8           8           8   8       8               8
+                                    8   8   aaaa8   8aaa8   aaaaa   8aaaaaaaa   8aaa8   a   8aaaaaaaa   a   8
+                                    8   8                   8           8               8               8   8
+                                    8   8aaaaaaaaaaaaaaaaaaa8aaaaaaaaaaa8aaaaaaaaaaaaaaa8aaaaaaaaaaaaaaa8aaa8''')
+
+                                    print("Bottom left is your starting point.")
