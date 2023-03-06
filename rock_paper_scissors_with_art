@@ -1,0 +1,63 @@
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+import random
+
+def play():
+  user = int(input("Choose 0 for rock, 1 for paper, 2 for scissors!"))
+  computer = random.choice([0,1,2])
+
+  if user == 0:
+    print(f"You used rock!{rock}")
+  if user == 1:
+    print(f"You used paper!{paper}")
+  if user == 2:
+    print(f"You used scissors!{scissors}")
+
+  if computer == 0:
+    print(f"Computer used rock!{rock}")
+  if computer == 1:
+    print(f"Computer used paper!{paper}")
+  if computer == 2:
+    print(f"Computer used scissors!{scissors}")
+
+  if (user == computer):
+    print("It's a tie!")
+
+  if winner(computer,user):
+    print("You won!")
+
+  else:
+    print("You lost :(")
+    
+def winner(computer,user):
+  if (user == 1 and computer == 0) or (user == 0 and computer == 2) or (user == 2 and computer == 1):
+    return True
+
+print(play())
+  
+
