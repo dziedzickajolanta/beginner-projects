@@ -1,0 +1,14 @@
+student_heights = input("Input a list of student heights seprarated by space \n").split()
+for n in range(0, len(student_heights)):
+  student_heights[n] = int(student_heights[n])
+
+heightsum = 0
+for height in student_heights:
+    heightsum += height
+
+nostudends = 0
+for student in student_heights:
+    nostudends += 1
+
+aver = round(heightsum/nostudends)
+print(aver)
