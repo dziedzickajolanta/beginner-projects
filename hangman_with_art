@@ -1,0 +1,93 @@
+import random
+
+HANGMANPICS = ['''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''']
+
+
+word_list = ['someone', 'something', 'anything']
+
+word_to_guess = random.choice(word_list)
+number_of_letters = len(word_to_guess)
+
+game_over = False
+lives = 0
+
+
+display = []
+for _ in range(number_of_letters):
+    display += "_"
+
+while not game_over:
+    letter_guessed = input("Please select a letter to guess: \n").lower()
+    if letter_guessed in display:
+        print("You have already guessed this letter!")
+
+    for position in range(number_of_letters):
+        letter = word_to_guess[position]
+        if letter == letter_guessed:
+            display[position] = letter
+
+    if letter_guessed not in word_to_guess:
+        print("This letter is not in the word. You lose one life.")
+        lives +=1
+        if lives == 6:
+            game_over = True
+            print("You lost :(")
+    print(f"{''.join(display)}")
+
+    print(HANGMANPICS[lives])
+    
+    if "_" not in display:
+        game_over = True
+        print("Yay! You won!")
+
+
+
