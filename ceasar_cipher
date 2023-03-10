@@ -1,0 +1,45 @@
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+
+def encrypt(plain_text, shift_amount):
+  encriptmessage = ""
+  for letter in plain_text:
+    position = alphabet.index(letter)
+    new_position = position+shift_amount
+    new_letter = alphabet[new_position]
+    encriptmessage += new_letter
+  print(f"The encoded text is {encriptmessage}")
+
+def decrypt(encoded_text, shift_amount2):
+  decryptmessage = ""
+  for lettertodecrypt in encoded_text:
+    positioninitial = alphabet.index(lettertodecrypt)
+    positionfinal = 26+positioninitial-shift_amount2
+    finalletter = alphabet[positionfinal]
+    decryptmessage += finalletter
+  print(f"The decoded message is {decryptmessage}")
+
+def start():
+  if direction == 'encode':
+    encrypt(text, shift)
+  else:
+    decrypt(text, shift)
+
+start()
+
+should_end = False
+while not should_end:
+
+  direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+  text = input("Type your message:\n").lower()
+  shift = int(input("Type the shift number:\n"))
+
+  start()
+
+  restart = input("Type 'yes' if you want to go again. Otherwise type 'no'.\n")
+  if restart == "no":
+    should_end = True
+    print("Goodbye")
