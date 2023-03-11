@@ -1,0 +1,46 @@
+#from replit import clear
+
+#from art import logo
+print(logo)
+
+listofnames =[]
+listvalues= []
+
+def askfordata():
+  name = str(input("Name of the bidder:"))
+  value = int(input("How much would you like to bid?"))
+  listofnames.append(name)
+  listvalues.append(value)
+
+def find_highest_bidder():
+  mixedindict = dict(zip(listofnames, listvalues))
+  sortedlist = sorted(mixedindict.items(), key=lambda x:x[1], reverse = True)
+  firstplace = list(sortedlist[0])
+  nameofwinner = firstplace[0]
+  valueofwinner = firstplace[1]
+  print(f"{nameofwinner} won with {valueofwinner}")
+  
+
+def goingon():
+  doesntend = input("Are there any more bidders? y for yes n for no")
+  if doesntend == 'y':
+    clear()
+    askfordata()
+    goingon()
+  else:
+    find_highest_bidder()
+
+def play():
+  askfordata()
+  goingon()
+
+play()
+
+
+
+
+  
+    
+    
+    
+  
