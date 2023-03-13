@@ -1,0 +1,56 @@
+logo = """
+.------.            _     _            _    _            _    
+|A_  _ |.          | |   | |          | |  (_)          | |   
+|( \/ ).-----.     | |__ | | __ _  ___| | ___  __ _  ___| | __
+| \  /|K /\  |     | '_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ /
+|  \/ | /  \ |     | |_) | | (_| | (__|   <| | (_| | (__|   < 
+`-----| \  / |     |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\\
+      |  \/ K|                            _/ |                
+      `------'                           |__/           
+"""
+
+import random
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+your_cards = [random.choice(cards), random.choice(cards)]
+onerandomcard = [random.choice(cards)]
+anotherrandomcard = [random.choice(cards)]
+
+def shuffle():
+  print(f"Your cards: {your_cards}")
+  print(f"Computer's first card: {onerandomcard}")
+  another = input("Type y to get another card, type n to pass: ")
+  if another == 'y':
+    useranothercard = [random.choice(cards)]
+    allcards = your_cards + useranothercard
+    print(f"Your cards are: {allcards}")
+    return allcards
+  else:
+    allcards = your_cards
+    print(f"Your cards are: {allcards}")
+    return allcards
+  computerfinalcards = onerandomcard + anotherrandomcard
+  print(f"Computer's final hand: {computerfinalcards}")
+  return computerfinalcards
+
+shuffle()
+
+sumallcards = sum(allcards)
+sumcomputer = sum(computerfinalcards)
+
+def who_wins():
+  is_win = False
+  if sumallcards > 21:
+    is_win = False
+  elif sumallcards == 21:
+    is_win = True
+  elif sumallcards < sumcomputer and sumcomputer <= 21:
+    is_win = False
+  else:
+    is_win = True
+
+  if is_win:
+    print("You won!")
+  else:
+    print("You lost :(")
+who_wins()
