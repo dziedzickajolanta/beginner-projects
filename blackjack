@@ -16,6 +16,9 @@ your_cards = [random.choice(cards), random.choice(cards)]
 onerandomcard = [random.choice(cards)]
 anotherrandomcard = [random.choice(cards)]
 
+allcards = []
+computerfinalcards=[]
+
 def shuffle():
   print(f"Your cards: {your_cards}")
   print(f"Computer's first card: {onerandomcard}")
@@ -24,15 +27,15 @@ def shuffle():
     useranothercard = [random.choice(cards)]
     allcards = your_cards + useranothercard
     print(f"Your cards are: {allcards}")
-    return allcards
   else:
     allcards = your_cards
     print(f"Your cards are: {allcards}")
-    return allcards
+
   computerfinalcards = onerandomcard + anotherrandomcard
   print(f"Computer's final hand: {computerfinalcards}")
+  return allcards
   return computerfinalcards
-
+  
 shuffle()
 
 sumallcards = sum(allcards)
@@ -42,15 +45,15 @@ def who_wins():
   is_win = False
   if sumallcards > 21:
     is_win = False
-  elif sumallcards == 21:
+  if sumallcards == 21:
     is_win = True
-  elif sumallcards < sumcomputer and sumcomputer <= 21:
+  if sumallcards < sumcomputer and sumcomputer <= 21:
     is_win = False
   else:
     is_win = True
-
   if is_win:
-    print("You won!")
+      print("You won!")
   else:
-    print("You lost :(")
+      print("You lost.")
+
 who_wins()
