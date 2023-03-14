@@ -1,0 +1,55 @@
+import random
+
+print("Hello! This is a number guessing game.")
+mode = int(input("Pick a difficulty (this indicades number of guesses you have). 0 for easy, 1 for hard"))
+numbertoguess = int(random.choice(range(0,100)))
+firstguess = int(input("Guess a number: \n"))
+
+if mode == 0:
+  attempts = 10
+else:
+  attempts = 5
+
+def play():
+  global numbertoguess
+  global mode
+  global firstguess
+  global attempts
+  
+  def continueplaying():
+    guess = int(input("Guess a number: \n"))
+    global attempts
+    while attempts > 0:
+      if numbertoguess > guess :
+        print("Too low.")
+        attempts -= 1
+        print(f"You have {attempts} remaining to guess the number.")
+        continueplaying()
+        break
+      elif numbertoguess < guess:
+        print("Too high")
+        attempts -=1
+        print(f"You have {attempts} remaining to guess the number.")
+        continueplaying()
+        break
+      elif numbertoguess == guess :
+        print("You guessed right! Congratulations!")
+        break
+        
+  if numbertoguess == firstguess :
+    print("You guessed right! Congratulations!")
+  elif numbertoguess > firstguess:
+    print("Too low.")
+    attempts -= 1
+    print(f"You have {attempts} remaining to guess the number.")
+    continueplaying()
+  elif numbertoguess < firstguess:
+    print("Too high")
+    attempts -=1
+    print(f"You have {attempts} remaining to guess the number.")
+    continueplaying() 
+  
+  if attempts == 0:
+    print(f"You lost. sorry. The number was {numbertoguess}")
+
+play()
