@@ -50,6 +50,6 @@ def play():
     continueplaying() 
   
   if attempts == 0:
-    print(f"You lost. sorry. The number was {numbertoguess}")
+    print(f"That was a pity guess. You lost. sorry. The number was {numbertoguess}")
 
 play()
