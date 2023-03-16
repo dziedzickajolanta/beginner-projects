@@ -1,0 +1,155 @@
+#HIGHER LOWER GENSHIN SALES EDITION
+import random
+import os
+clear = lambda: os.system('cls')
+
+genshin_banner_sales = {
+  "Ayaka R2" : 33939066,
+  "Nahida R1 and Yoimiya R3" : 34017290,
+  "Raiden R2 and Kokomi R2" : 33560259,
+  "Raiden R1" : 33020905,
+  "Yelan R1 and Xiao R3" : 32177144,
+  "Venti R1" : 30632752,
+  "Zhongli R3 and Ganyu R2" : 26780298,
+  "Hu Tao R2" : 25266952,
+  "Kazuha R2 and Klee R3" : 24808479,
+  "Ayato R1 and Venti R3" : 22767455,
+  "Klee R1" : 22750080,
+  "Tighnari R1 and Zhongli R4" : 19068732,
+  "Cyno R1 and Venti R4" : 19052023,
+  "Albedo R2 and Eula R2" : 17026066,
+  "Shenhe R1 and Xiao R2" : 16994406,
+  "Venti R2" : 16614209,
+  "Ayaka R1" : 16451006,
+  "Zhongli R1" : 16264892,
+  "Nilou R1 and Albedo R3": 15731680,
+  "Ganyu R3 and Kokomi R3" : 15681840,
+  "Ganyu R1" : 15669918,
+  "Yae Miko R1" : 15110264,
+  "Yoimiya R2" : 14333266,
+  "Tartaglia R1" : 13446619,
+  "Itto R1" : 13404072,
+  "Xiao R1" : 13145115,
+  "Eula R1" : 12619390,
+  "Itto R2" : 12586764,
+  "Hu Tao R1" : 12481634,
+  "Albedo R1" : 11816107,
+  "Zhongli R2" : 10216165,
+  "Kazuha R1" : 9807112,
+  "Kequing R1" : 9505798,
+  "Yoimiya R1" : 8615144,
+  "Tartaglia R3" : 7785438,
+  "Kokomi R1" : 7020975,
+  "Klee R2" : 7006180,
+  "Tartaglia R2" : 6965445
+}
+
+def get_nth_key(dictionary, n=0):
+  if n < 0:
+    n += len(dictionary)
+  for i, key in enumerate(dictionary.keys()):
+    if i == n:
+      return key
+  raise IndexError("dictionary index out of range")
+
+def get_key(val):
+  for key, value in genshin_banner_sales.items():
+    if val == value:
+      return key
+
+  return "key doesn't exist"
+
+
+print("R1 means first run, R2, second run(or first rerun) and so on.")
+
+def play():
+  start_play = True
+  firstoption = int(random.choice(range(1, 39)))
+  secondopttion = int(random.choice(range(1, 39)))
+
+  firstkey = get_nth_key(genshin_banner_sales, firstoption)
+  secondkey = get_nth_key(genshin_banner_sales, secondopttion)
+
+  if secondopttion == firstoption:
+    secondopttion = int(random.choice(range,1,39))
+
+  def playagain(higherposition):
+    higherposition = int(max(firstposition, secondposition))
+    higherkey = (get_key(higherposition))
+    anotheropttion = int(random.choice(range(1, 39)))
+    anotherkey = get_nth_key(genshin_banner_sales, anotheropttion)
+    if anotheropttion == higherposition:
+      anotheropttion = int(random.choice(range,1,39))
+    print(higherkey)
+    print(anotherkey)
+    anotheruser_choice = int(input("Between those two banners, chose which one you think had more revenue - 1 for first, 2 for second"))
+    if higherposition > anotheropttion:
+      correct_answer = 1
+      if correct_answer == anotheruser_choice:
+        print("Good job! Let's continue\n")
+        playagain(firstposition)
+      else:
+        print("That's incorrect. Sorry.\n")
+        if_go_again = input("Wanna go again? y for yes")
+        if if_go_again == 'y':
+          clear()
+          play()
+        else:
+          print("Thank's for playing!")
+
+    else:
+      correct_answer = 2
+      if correct_answer == anotheruser_choice:
+        print("Good job! Let's continue\n")
+        playagain(secondposition)
+      else:
+        print("That's incorrect. Sorry.\n")
+        if_go_again = input("Wanna go again? y for yes")
+        if if_go_again == 'y' :
+            clear()
+            play()
+        else:
+          print("Thank's for playing!")
+
+
+  while start_play:
+    print(firstkey)
+    print(secondkey)
+    user_choice = int(input("Between those two banners, chose which one you think had more revenue - 1 for first, 2 for second"))
+    firstposition = int(genshin_banner_sales[firstkey])
+    secondposition = int(genshin_banner_sales[secondkey])
+    if firstposition > secondposition:
+      correct_answer = 1
+      if correct_answer == user_choice:
+        print("Good job! Let's continue\n")
+        playagain(firstposition)
+        break
+      else:
+        print("That's incorrect. Sorry.\n")
+        if_go_again = input("Wanna go again? y for yes")
+        if if_go_again == 'y':
+          clear()
+          play()
+          break
+        else:
+          print("Thank's for playing!")
+          break
+    else:
+      correct_answer = 2
+      if correct_answer == user_choice:
+        print("Good job! Let's continue\n")
+        playagain(secondposition)
+        break
+      else:
+        print("That's incorrect. Sorry.\n")
+        if_go_again = input("Wanna go again? y for yes")
+        if if_go_again == 'y':
+          clear()
+          play()
+          break
+        else:
+          print("Thank's for playing!")
+          break
+
+
+play()
